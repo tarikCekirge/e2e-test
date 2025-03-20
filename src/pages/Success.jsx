@@ -8,7 +8,7 @@ const SuccessPage = () => {
     console.log(location)
 
     if (!location.state?.isAuthenticated) {
-        return <Navigate to="/" />;
+        return <Navigate to="" />;
     }
     return (
         <>
