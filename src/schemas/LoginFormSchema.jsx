@@ -5,7 +5,7 @@ const LoginFormSchema = Yup.object().shape({
         .min(4, "En az 4 karakter olmalıdır")
         .max(20, "Too Long!")
         .matches(/^[a-zA-Z0-9_-]+$/, "Geçersiz karakter")
-        .required("Required"),
+        .required("Zorunlu alan"),
     password: Yup.string()
         .required("Şifre alanı boş bırakılamaz")
         .min(8, "Karakter sayısı en az 8 olmalıdır")

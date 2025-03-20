@@ -5,7 +5,7 @@ const Success = () => {
     return (
 
         <div className='bg-green-600 p-6 rounded-lg'>
-            <Title className='text-white py-0!important'>Login Success</Title>
+            <Title className='text-white py-0!important'>Başarı</Title>
         </div>
     )
 }

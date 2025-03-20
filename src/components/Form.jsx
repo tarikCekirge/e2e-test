@@ -5,17 +5,17 @@ import { useNavigate } from 'react-router-dom';
 const Form = () => {
     const navigate = useNavigate();
 
-    const { values, errors, handleChange, handleReset, handleSubmit, handleBlur, dirty, touched } = useFormik({
+    const { values, errors, handleChange, handleReset, handleSubmit, handleBlur, dirty, touched, isValid } = useFormik({
         initialValues: {
             username: '',
             password: '',
             term: false
         },
-        validateOnChange: false,
+        validateOnChange: true,
         validateOnBlur: true,
+        validateOnMount: false,
         validationSchema: LoginFormSchema,
         onSubmit: () => {
-
             navigate('/success', { state: { isAuthenticated: true } });
         },
     });
@@ -82,7 +82,7 @@ const Form = () => {
                 <button type="reset" onClick={handleReset} className='text-slate-800 font-semibold cursor-pointer'>
                     Clear
                 </button>
-                <button type='submit' className='bg-slate-700 text-white font-semibold px-8 py-3 rounded-md cursor-pointer' disabled={!dirty}>
+                <button type='submit' className='bg-slate-700 text-white font-semibold px-8 py-3 rounded-md cursor-pointer' disabled={!isValid || !dirty}>
                     Login
                 </button>
             </div>
