@@ -5,7 +5,7 @@ import Title from '../components/Title'
 const LoginPage = () => {
     return (
         <>
-            <Title className='text-slate-800'>Login</Title>
+            <Title className='text-slate-800 mb-4'>Login</Title>
             <Form />
         </>
     )
